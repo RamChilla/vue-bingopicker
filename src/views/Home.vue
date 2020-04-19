@@ -7,13 +7,13 @@
         @onBingoClick="pickRandomAndRemove" />
 
       <v-btn v-show="pickNumberButton" class="mb-6" color="info" x-large @click="pickRandomAndRemove">
-        <v-icon large>announcement</v-icon>
-        <span class="ml-4">Pick Number</span>
+        <v-icon>announcement</v-icon>
+        <span class="ml-4 text-lowercase">Pick Number</span>
       </v-btn>
 
       <v-btn v-show="!pickNumberButton" class="mb-6" color="pink" x-large @click="resetBingoPicker">
-        <v-icon large>loop</v-icon>
-        <span class="ml-4">Reset Bingo</span>
+        <v-icon>loop</v-icon>
+        <span class="ml-4 text-lowercase">Reset Bingo</span>
       </v-btn>
 
       <v-row v-for="(bingoset, index) in bingoViewPool" :key="index">
@@ -45,7 +45,7 @@ export default {
     return {
       bingoLetters: ["B", "I", "N", "G", "O"],
       bingoNumberRange: [...Array(76).keys()],
-      currentBingoNumber: " ",
+      currentBingoNumber: "begin",
       bingoPool: [],
       bingoSelected: [],
       bingoViewPool: {
@@ -82,19 +82,19 @@ export default {
     },
 
     _selectRandom: function(set) {
-      const selectedIndex = this._getRandomNumber(0, set.length);
+      const selectedIndex = this._getRandomIndex(0, set.length);
       return {
         value: set[selectedIndex],
         selectedIndex: selectedIndex
       }
     },
 
-    _getRandomNumber: function(min, max) {
+    _getRandomIndex: function(min, max) {
       return Math.floor(Math.random() * (max - min)) + min;
     },
 
     resetBingoPicker: function() {
-      this.currentBingoNumber = " ";
+      this.currentBingoNumber = "drinko";
       this.bingoPool = [];
       this.bingoSelected = [];
       this.pickNumberButton = true;

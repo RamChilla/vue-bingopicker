@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  
     <v-row class="text-center">
       <v-col class="mb-4">
         <!-- <h1 class="display-4 font-weight-light mb-3">{{ msg }}</h1> -->
@@ -13,14 +13,14 @@
           color="teal"
           :indeterminate="indeterminate" 
           style="border-radius: 50%;" 
-          @click="onBingoClick"
+          @click="$emit('onBingoClick')"
         >
           <span>{{msg}}</span>
         </v-progress-circular>
 
       </v-col>
     </v-row>
-  </v-container>
+  
 </template>
 
 <script>
@@ -29,12 +29,7 @@ export default {
   props: ["msg", "value", "indeterminate"],
   data: () => ({
     
-  }),
-  methods: {
-    onBingoClick() {
-      this.$emit('onBingoClick')
-    }
-  }
+  })
 };
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <v-app :style="{background: $vuetify.theme.themes['light'].background}">
     
-    <Navbar />
+    <Navbar :appName="appName" />
 
     <v-content>
       <router-view></router-view>
@@ -19,7 +19,7 @@ export default {
     Navbar
   },
   data: () => ({
-    //
+    appName: 'drinko bingo'
   }),
 };
 </script>

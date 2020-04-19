@@ -1,24 +1,8 @@
-# bingopicker
+# Drinko Bingo Ball Picker
 
-## Project setup
-```
-npm install
-```
+Drinko is a bingo number picker made during the Covid-19 pandemic.
+My girlfriend planned a bingo style game for us to play but forgot the ball picker.
+Since I'm just learning Vue.js and Vuetify, 
+I figured this would be a good opportunity to learn it.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+It's a Vue App, so use vue-cli and then `npm run start`.
