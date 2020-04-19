@@ -31,17 +31,22 @@
               <v-list-item-title class="font-weight-light display-1">{{ appName }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
+
+          <v-divider></v-divider>
+
+          <v-list-item>
+            <v-list-item-content v-html="aboutText" class="subtitle-1"></v-list-item-content>
+          </v-list-item>
+
+          <v-divider></v-divider>
+
+          <v-list-item>
+            <v-list-item-content v-html="aboutText2" class="subtitle-2"></v-list-item-content>
+          </v-list-item>
+
         </v-list>
 
         <v-divider></v-divider>
-
-        <v-list>
-          <v-list-item>
-            <v-list-item-content>
-              {{ helpText }}
-            </v-list-item-content>
-          </v-list-item>
-        </v-list>
 
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -69,6 +74,7 @@
         </v-btn>
       </v-list>
     </v-menu>
+    
   </v-app-bar>
 </template>
 
@@ -79,11 +85,11 @@ export default {
     return {
       showHelp: false,
       menu: false,
-      helpText: `Drinko is a bingo number picker made during the Covid-19 pandemic.
-              My girlfriend planned a bingo style game for us to play 
+      aboutText: 'A bingo number picker made during the Covid-19 pandemic.',
+      aboutText2: `My girlfriend planned a bingo style game for us to play 
               but didn't have a the ball picker.
               Since I'm just learning Vue.js and Vuetify, 
-              I figured this would be a good opportunity to learn it.`
+              I figured this would be a good opportunity to learn&nbsp;it.`
     };
   }
 };
