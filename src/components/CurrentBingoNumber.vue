@@ -5,9 +5,9 @@
         <!-- <h1 class="display-4 font-weight-light mb-3">{{ msg }}</h1> -->
 
         <v-progress-circular v-ripple
-          class="display-4"
+          class="display-3"
           rotate="0"
-          size="300"
+          size="256"
           width="8"
           :value="value"
           color="teal"

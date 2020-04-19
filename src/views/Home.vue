@@ -21,10 +21,10 @@
           :class="`text-center ${bingo.isSelected ? '':''}`">
           
           <v-expand-transition leave-absolute duration="1000">
-            <p v-if="bingo.isSelected" class="mb-0 font-weight-black pink--text">{{bingo.value}}</p>
+            <p v-show="bingo.isSelected" class="mb-0 font-weight-black pink--text">{{bingo.value}}</p>
           </v-expand-transition>
           <v-expand-transition leave-absolute duration="2000">
-            <p v-if="!bingo.isSelected" class="mb-0 primary--text">{{bingo.value}}</p>
+            <p v-show="!bingo.isSelected" class="mb-0 primary--text">{{bingo.value}}</p>
           </v-expand-transition>
 
         </v-col>
