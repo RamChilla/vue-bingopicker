@@ -87,7 +87,7 @@ export default {
       menu: false,
       aboutText: 'A bingo number picker made during the Covid-19 pandemic.',
       aboutText2: `My girlfriend planned a bingo style game for us to play 
-              but didn't have a the ball picker.
+              but didn't have a bingo ball picker.
               Since I'm just learning Vue.js and Vuetify, 
               I figured this would be a good opportunity to learn&nbsp;it.`
     };
