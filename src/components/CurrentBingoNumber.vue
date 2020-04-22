@@ -61,7 +61,6 @@ export default {
     //   // balls(newvalue)
     // },
     currentNumber: function(newvalue, oldvalue) {
-      console.log(newvalue)
       if (newvalue === " " || oldvalue === " ") {
         this.previousNumber = "&nbsp;";
         this.showPreviousLabel = false;
