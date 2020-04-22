@@ -1,12 +1,15 @@
 <template>
-  <div class="home">
+  <div class="home" >
     <v-container fluid class="text-center">
+      
       <CurrentBingoNumber 
-        :msg="currentBingoNumber" 
-        :value="percentageSelected"
-        @onBingoClick="pickRandomAndRemove" />
+        :currentNumber="currentBingoNumber" 
+        :percentageValue="percentageSelected"
+        :numberOfBalls="bingoPool.length"
+        @onBingoClick="pickBingoNumber" 
+      />
 
-      <v-btn v-show="pickNumberButton" class="mb-6" color="info" x-large @click="pickRandomAndRemove">
+      <v-btn v-show="pickNumberButton" class="mb-6" color="info" x-large @click="pickBingoNumber">
         <v-icon>announcement</v-icon>
         <span class="ml-4 text-lowercase">Pick Number</span>
       </v-btn>
@@ -45,7 +48,7 @@ export default {
     return {
       bingoLetters: ["B", "I", "N", "G", "O"],
       bingoNumberRange: [...Array(76).keys()],
-      currentBingoNumber: "begin",
+      currentBingoNumber: " ",
       bingoPool: [],
       bingoSelected: [],
       bingoViewPool: {
@@ -60,7 +63,7 @@ export default {
   },
 
   methods: {
-    pickRandomAndRemove() {
+    pickBingoNumber() {
       if (this.bingoPool.length > 0) {
         //select from the available pool
         const currentSelect = this._selectRandom(this.bingoPool);
@@ -94,7 +97,7 @@ export default {
     },
 
     resetBingoPicker: function() {
-      this.currentBingoNumber = "drinko";
+      this.currentBingoNumber = " ";
       this.bingoPool = [];
       this.bingoSelected = [];
       this.pickNumberButton = true;
@@ -143,10 +146,8 @@ export default {
   },
 
   mounted() {
-    this.$root.$on('onResetBingo', () => {
-      this.resetBingoPicker();
-    })
-  }
+    this.$root.$on('onResetBingo', this.resetBingoPicker);
+  },
 
 };
 </script>

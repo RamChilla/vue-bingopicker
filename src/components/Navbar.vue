@@ -26,7 +26,6 @@
             <v-list-item-avatar color="primary">
               <v-icon x-large class="white--text">help_outline</v-icon>
             </v-list-item-avatar>
-
             <v-list-item-content>
               <v-list-item-title class="font-weight-light display-1">{{ appName }}</v-list-item-title>
             </v-list-item-content>
@@ -43,7 +42,6 @@
           <v-list-item>
             <v-list-item-content v-html="aboutText2" class="subtitle-2"></v-list-item-content>
           </v-list-item>
-
         </v-list>
 
         <v-divider></v-divider>
@@ -70,7 +68,7 @@
       <v-list light>
         <v-btn text color="pink" @click="$root.$emit('onResetBingo')">
           <v-icon>loop</v-icon>
-          <span class="ml-4 text-lowercase">Reset drinko</span>
+          <span class="ml-4 text-lowercase">Reset {{appName}}</span>
         </v-btn>
       </v-list>
     </v-menu>

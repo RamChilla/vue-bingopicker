@@ -12,14 +12,11 @@
 
 <script>
 import Navbar from './components/Navbar'
-
 export default {
   name: 'App',
-  components: {
-    Navbar
-  },
+  components: { Navbar },
   data: () => ({
-    appName: 'drinko bingo'
-  }),
+    appName: 'bingo'
+  })
 };
 </script>
