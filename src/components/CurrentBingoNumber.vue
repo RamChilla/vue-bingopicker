@@ -11,7 +11,7 @@
         :value="percentageValue"
         color="teal"
         :indeterminate="indeterminate" 
-        style="border-radius: 50%; z-index: 99; position: relative" 
+        style="border-radius: 50%; position: relative" 
         @click="$emit('onBingoClick')"
       >
       
