@@ -1,8 +1,7 @@
 <template>
   <v-row class="text-center">
     <v-col class="mb-4">
-      <!-- <h1 class="display-4 font-weight-light mb-3">{{ msg }}</h1> -->
-
+      
       <v-progress-circular v-ripple
         class="display-3"
         rotate="0"
@@ -15,8 +14,8 @@
         @click="$emit('onBingoClick')"
       >
       
-        <div class="number-labels">
-          <p class="mb-1 pb-2" style="z-index: 9;">{{currentNumber}}</p>
+        <div class="number-labels" style="z-index: 2;">
+          <p v-show="currentNumber != ' '" class="mb-1 pb-2">{{currentNumber}}</p>
           <p class="title mb-0">
             <span class="subtitle-2" v-show="showPreviousLabel">Previous: </span> 
             <span v-html="previousNumber"></span>
@@ -27,14 +26,13 @@
           absolute
           :value="overlay"
           style="border-radius:50%;"
-          zIndex="0"
-          color: primary
+          zIndex="1"
+          color="primary"
         >
           <canvas id="canvas" style="border-radius: 50%"></canvas>
         </v-overlay>
 
       </v-progress-circular>
-      
       
     </v-col>
   </v-row>
