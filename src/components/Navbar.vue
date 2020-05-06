@@ -15,13 +15,14 @@
       light
     >
       <template v-slot:activator="{ on }">
-        <v-btn small icon v-on="on">
+        <v-btn small icon v-on="on" class="mr-1">
           <v-icon>help_outline</v-icon>
         </v-btn>
       </template>
 
       <v-card max-width="300px">
         <v-list>
+
           <v-list-item>
             <v-list-item-avatar color="primary">
               <v-icon x-large class="white--text">help_outline</v-icon>
@@ -53,6 +54,7 @@
             <span>Okay</span>
           </v-btn>
         </v-card-actions>
+        
       </v-card>
     </v-menu>
 

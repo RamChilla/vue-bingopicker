@@ -14,7 +14,7 @@
         @click="$emit('onBingoClick')"
       >
       
-        <div class="number-labels" style="z-index: 2;">
+        <div v-show="!showLoader" class="number-labels" style="z-index: 2;">
           <p v-show="currentNumber != ' '" class="mb-1 pb-2">{{currentNumber}}</p>
           <p class="title mb-0">
             <span class="subtitle-2" v-show="showPreviousLabel">Previous: </span> 
@@ -24,12 +24,12 @@
         
         <v-overlay
           absolute
-          :value="overlay"
+          :value="showLoader"
           style="border-radius:50%;"
           zIndex="1"
-          color="primary"
+          color="transparent"
         >
-          <canvas id="canvas" style="border-radius: 50%"></canvas>
+          <vue-loaders name="semi-circle-spin" color="#7375A5" scale="6"></vue-loaders>
         </v-overlay>
 
       </v-progress-circular>
@@ -39,27 +39,21 @@
 </template>
 
 <script>
-// import balls from "@/assets/animatedBalls.js"
 export default {
   name: "CurrentBingoNumber",
   props: [
     "currentNumber", 
     "percentageValue", 
-    "numberOfBalls"
+    "numberOfBalls",
+    "showLoader"
   ],
   data: () => ({
-    overlay: false,
+    overlay: true,
     indeterminate: false,
     previousNumber: "&nbsp;",
     showPreviousLabel: false
   }),
-  mounted() {
-    //balls(this.numberOfBalls)
-  },
   watch: {
-    // numberOfBalls: function(newvalue) {
-    //   // balls(newvalue)
-    // },
     currentNumber: function(newvalue, oldvalue) {
       if (newvalue === " " || oldvalue === " ") {
         this.previousNumber = "&nbsp;";

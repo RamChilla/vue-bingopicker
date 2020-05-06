@@ -7,9 +7,10 @@
         :percentageValue="percentageSelected"
         :numberOfBalls="bingoPool.length"
         @onBingoClick="pickBingoNumber" 
+        :showLoader="showLoader" 
       />
 
-      <v-btn v-show="pickNumberButton" class="mb-6" color="info" x-large @click="pickBingoNumber">
+      <v-btn :disabled="showLoader" v-show="pickNumberButton" class="mb-6" color="info" x-large @click="pickBingoNumber">
         <v-icon>announcement</v-icon>
         <span class="ml-4 text-lowercase">Pick Number</span>
       </v-btn>
@@ -58,29 +59,37 @@ export default {
         G: {},
         O: {},
       },
-      pickNumberButton: true
+      pickNumberButton: true,
+      showLoader: false
     };
   },
 
   methods: {
     pickBingoNumber() {
-      if (this.bingoPool.length > 0) {
-        //select from the available pool
-        const currentSelect = this._selectRandom(this.bingoPool);
-        this.currentBingoNumber = currentSelect.value;
-        this.bingoSelected.push(currentSelect.value);
+      if (this.bingoPool.length > 0 && !this.showLoader) {
+        this.showLoader = !this.showLoader;
 
-        //update selected balls view
-        const letter = currentSelect.value.charAt(0);
-        const formattedKey = currentSelect.value.replace(" ", "");
-        this.bingoViewPool[letter][formattedKey].isSelected = true;
+        setTimeout(() => {
+          //select from the available pool
+          const currentSelect = this._selectRandom(this.bingoPool);
+          this.currentBingoNumber = currentSelect.value;
+          this.bingoSelected.push(currentSelect.value);
 
-        //remove from pool
-        this.$delete(this.bingoPool, currentSelect.selectedIndex);
-      }
-      //no more numbers in the pool
-      if(this.bingoPool.length === 0) {
-        this.pickNumberButton = false;
+          //update selected balls view
+          const letter = currentSelect.value.charAt(0);
+          const formattedKey = currentSelect.value.replace(" ", "");
+          this.bingoViewPool[letter][formattedKey].isSelected = true;
+
+          //remove from pool
+          this.$delete(this.bingoPool, currentSelect.selectedIndex);
+          this.showLoader = !this.showLoader;
+
+          //no more numbers in the pool
+          if(this.bingoPool.length === 0) {
+            this.pickNumberButton = false;
+          }
+        }, 1320)
+
       }
     },
 
