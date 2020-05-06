@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app flat dense color="secondary">
+  <v-app-bar app flat dense color="transparent">
     <v-toolbar-title class="font-weight-light" style="letter-spacing: 2px;">{{ appName }}</v-toolbar-title>
 
     <v-spacer></v-spacer>

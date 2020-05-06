@@ -14,14 +14,16 @@
         @click="$emit('onBingoClick')"
       >
       
-        <div v-show="!showLoader" class="number-labels" style="z-index: 2;">
-          <p v-show="currentNumber != ' '" class="mb-1 pb-2">{{currentNumber}}</p>
-          <p class="title mb-0">
-            <span class="subtitle-2" v-show="showPreviousLabel">Previous: </span> 
-            <span v-html="previousNumber"></span>
-          </p>
-        </div>
-        
+        <v-scale-transition origin="center">
+          <div v-show="!showLoader" class="number-labels" style="z-index: 2;">
+            <p v-show="currentNumber != ' '" class="mb-1 pb-2">{{currentNumber}}</p>
+            <p class="title mb-0">
+              <span class="subtitle-2" v-show="showPreviousLabel">Previous: </span> 
+              <span v-html="previousNumber"></span>
+            </p>
+          </div>
+        </v-scale-transition>
+
         <v-overlay
           absolute
           :value="showLoader"
