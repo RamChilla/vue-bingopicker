@@ -31,7 +31,7 @@
           zIndex="1"
           color="transparent"
         >
-          <vue-loaders name="semi-circle-spin" color="#7375A5" scale="6"></vue-loaders>
+          <vue-loaders name="semi-circle-spin" color="#2B364A" scale="6"></vue-loaders>
         </v-overlay>
 
       </v-progress-circular>

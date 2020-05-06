@@ -88,7 +88,7 @@ export default {
           if(this.bingoPool.length === 0) {
             this.pickNumberButton = false;
           }
-        }, 1320)
+        }, this._getRandomIndex(330, 2200))
 
       }
     },

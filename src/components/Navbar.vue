@@ -58,7 +58,6 @@
       </v-card>
     </v-menu>
 
-
     <!--Dropdown Menu-->
     <v-menu offset-y transition="scroll-y-transition">
       <template v-slot:activator="{on}">
