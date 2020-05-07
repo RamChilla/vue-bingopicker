@@ -48,11 +48,16 @@
         <v-divider></v-divider>
 
         <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn depressed color="info" @click="menu = false">
-            <v-icon left>thumb_up</v-icon> 
-            <span>Okay</span>
+          <v-btn text small color="blue-grey lighten-1" :href="ghLink">
+            <v-icon left>open_in_new</v-icon>
+            <span>Github</span> 
           </v-btn>
+          <v-spacer></v-spacer>
+          <v-btn text color="info" @click="menu = false">
+            <v-icon left>thumb_up</v-icon> 
+            <span>Ok, Cool</span>
+          </v-btn>
+          
         </v-card-actions>
         
       </v-card>
@@ -84,11 +89,12 @@ export default {
     return {
       showHelp: false,
       menu: false,
-      aboutText: 'A bingo number picker made during the Covid-19 pandemic.',
+      ghLink: 'https://github.com/ramchilla/vue-bingopicker',
+      aboutText: 'A bingo number picker made with Vue.js during the Covid-19 pandemic.',
       aboutText2: `My girlfriend planned a bingo style game for us to play 
               but didn't have a bingo ball picker.
               Since I'm just learning Vue.js and Vuetify, 
-              I figured this would be a good opportunity to learn&nbsp;it.`
+              I figured this would be a good opportunity to use&nbsp;it.`
     };
   }
 };

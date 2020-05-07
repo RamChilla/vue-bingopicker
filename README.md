@@ -1,7 +1,8 @@
 # Vue Bingo Ball Picker
 
-This is a bingo number picker made during the Covid-19 pandemic.
-My girlfriend planned a bingo style game for us to play but didn't have a ball picker.
+A bingo number picker made with Vue.js during the Covid-19 pandemic. You'll need your own cards and dabbers, and use this to select the bingo numbers.
+
+My girlfriend planned a bingo style game for us to play but didn't have a bingo ball picker.
 Since I'm just learning Vue.js and Vuetify, 
 I figured this would be a good opportunity to use it.
 

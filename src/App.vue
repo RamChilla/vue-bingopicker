@@ -16,7 +16,7 @@ export default {
   name: 'App',
   components: { Navbar },
   data: () => ({
-    appName: 'bingo-picker'
+    appName: 'bingo picker'
   })
 };
 </script>

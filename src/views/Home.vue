@@ -24,10 +24,10 @@
         <v-col v-for="(bingo, idx) in bingoset" :key="idx" 
           :class="`text-center ${bingo.isSelected ? '':''}`">
           
-          <v-expand-transition leave-absolute duration="1000">
+          <v-expand-transition leave-absolute>
             <p v-show="bingo.isSelected" class="mb-0 font-weight-black pink--text">{{bingo.value}}</p>
           </v-expand-transition>
-          <v-expand-transition leave-absolute duration="2000">
+          <v-expand-transition leave-absolute>
             <p v-show="!bingo.isSelected" class="mb-0 primary--text">{{bingo.value}}</p>
           </v-expand-transition>
 
@@ -45,11 +45,12 @@ export default {
   name: "Home",
   components: { CurrentBingoNumber },
 
-  data() {
+  data() { 
+    // todo: there has to be a better way to keep track of all this
+    // see resetBingoPicker method responsible for setting component data
     return {
       bingoLetters: ["B", "I", "N", "G", "O"],
       bingoNumberRange: [...Array(76).keys()],
-      currentBingoNumber: " ",
       bingoPool: [],
       bingoSelected: [],
       bingoViewPool: {
@@ -59,14 +60,16 @@ export default {
         G: {},
         O: {},
       },
+      currentBingoNumber: " ",
       pickNumberButton: true,
       showLoader: false
-    };
+    }
   },
 
   methods: {
     pickBingoNumber() {
       if (this.bingoPool.length > 0 && !this.showLoader) {
+        
         this.showLoader = !this.showLoader;
 
         setTimeout(() => {
