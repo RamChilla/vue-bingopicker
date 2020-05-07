@@ -1,12 +1,9 @@
 <template>
   <v-app :style="{background: $vuetify.theme.themes['light'].background}">
-    
     <Navbar :appName="appName" />
-
     <v-content>
       <router-view></router-view>
     </v-content>
-
   </v-app>
 </template>
 

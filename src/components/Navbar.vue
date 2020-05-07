@@ -1,9 +1,7 @@
 <template>
   <v-app-bar app flat dense color="transparent">
     <v-toolbar-title class="font-weight-light" style="letter-spacing: 2px;">{{ appName }}</v-toolbar-title>
-
     <v-spacer></v-spacer>
-
     <!-- help menu -->
     <v-menu
       v-model="menu"
@@ -22,7 +20,6 @@
 
       <v-card max-width="300px">
         <v-list>
-
           <v-list-item>
             <v-list-item-avatar color="primary">
               <v-icon x-large class="white--text">help_outline</v-icon>
@@ -57,9 +54,7 @@
             <v-icon left>thumb_up</v-icon> 
             <span>Ok, Cool</span>
           </v-btn>
-          
         </v-card-actions>
-        
       </v-card>
     </v-menu>
 
@@ -78,7 +73,6 @@
         </v-btn>
       </v-list>
     </v-menu>
-    
   </v-app-bar>
 </template>
 
@@ -90,9 +84,8 @@ export default {
       showHelp: false,
       menu: false,
       ghLink: 'https://github.com/ramchilla/vue-bingopicker',
-      aboutText: 'A bingo number picker made with Vue.js during the Covid-19 pandemic.',
-      aboutText2: `My girlfriend planned a bingo style game for us to play 
-              but didn't have a bingo ball picker.
+      aboutText: 'A bingo number picker made with Vue.js and Vuetify.',
+      aboutText2: `No bingo picker? No problem. We needed a bingo ball picker for a game my girlfriend had planned.
               Since I'm just learning Vue.js and Vuetify, 
               I figured this would be a good opportunity to use&nbsp;it.`
     };
