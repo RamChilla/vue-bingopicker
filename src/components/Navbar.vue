@@ -49,7 +49,7 @@
 
         <v-card-actions>
           <v-btn text small color="blue-grey lighten-1" :href="ghLink">
-            <v-icon left>open_in_new</v-icon>
+            <v-icon small left>open_in_new</v-icon>
             <span>Github</span> 
           </v-btn>
           <v-spacer></v-spacer>
